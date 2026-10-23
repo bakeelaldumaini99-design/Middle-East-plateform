@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#821a24">
+  <meta name="description" content="CSCA preparation in English: mathematics, physics and chemistry courses, 360 interactive practice questions and 182 Arabic–English science terms. By Middle East Educational Foundation.">
+  <title>CSCA Mastery | Middle East Educational Foundation</title>
+  <link rel="icon" type="image/png" href="assets/brand-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="extension.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand-wrap">
+        <img src="assets/brand-logo.png" alt="Middle East Educational Foundation red and gold logo" class="brand-logo">
+        <div class="brand-text"><div class="brand-name">MIDDLE EAST</div><div class="brand-secondary">EDUCATIONAL FOUNDATION</div><div lang="ar" dir="rtl" class="brand-ar">مؤسسة الشرق الأوسط التعليمية</div></div>
+      </div>
+      <div class="side-caption">STUDY SPACE</div>
+      <nav class="side-nav" id="mainNav">
+        <button type="button" class="nav-link active" data-route="home"><span class="nav-ico">⌂</span> Dashboard</button>
+        <button type="button" class="nav-link" data-route="subject/mathematics"><span class="nav-ico">∑</span> Mathematics <span class="nav-number">12</span></button>
+        <button type="button" class="nav-link" data-route="subject/physics"><span class="nav-ico">⚛</span> Physics <span class="nav-number">12</span></button>
+        <button type="button" class="nav-link" data-route="subject/chemistry"><span class="nav-ico">⬡</span> Chemistry <span class="nav-number">12</span></button>
+        <button type="button" class="nav-link" data-route="glossary"><span class="nav-ico">A/ع</span> Bilingual glossary</button>
+        <button type="button" class="nav-link" data-route="exam"><span class="nav-ico">▣</span> Mock exams</button>
+        <button type="button" class="nav-link" data-route="progress"><span class="nav-ico">▥</span> My progress</button>
+        <button type="button" class="nav-link" data-route="login" id="authNav"><span class="nav-ico">♙</span> Login / Register</button>
+        <button type="button" class="nav-link hidden" data-route="admin" id="adminNav"><span class="nav-ico">♛</span> Admin panel</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="founder-box" lang="ar" dir="rtl"><strong>مؤسسة الشرق الأوسط التعليمية</strong><small>المؤسس والتواصل</small><a href="tel:+967716621214" dir="ltr">+967 716 621 214</a><a href="https://wa.me/967716621214" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب ↗</a></div><div class="sidebar-accent">LEARN WITH PURPOSE</div><p>Academic excellence begins with a clear path and consistent practice.</p><a href="https://csca.cn/" target="_blank" rel="noopener noreferrer">Official CSCA website ↗</a><span class="small-footer">Independent learning resource • 2026</span></div>
+    </aside>
+    <div class="sidebar-scrim" id="scrim"></div>
+    <div class="main-column">
+      <header class="topbar">
+        <button type="button" id="menuBtn" class="icon-button mobile-menu" aria-label="Open navigation">☰</button>
+        <span class="top-crumb" id="crumb">ACADEMY / OVERVIEW</span>
+        <div class="header-search"><span aria-hidden="true">⌕</span><input id="globalSearch" autocomplete="off" placeholder="Search lessons and terms..." aria-label="Search lessons and glossary"><kbd>/</kbd></div>
+        <div class="header-tools"><button type="button" class="language-toggle" id="languageBtn" aria-label="Toggle language" title="Change language">العربية</button><button type="button" class="account-chip" id="accountBtn" data-route="login">Sign in</button></div>
+      </header>
+      <main id="view" tabindex="-1"></main>
+      <footer class="site-footer"><span>© 2026 Middle East Educational Foundation</span><a href="tel:+967716621214" dir="ltr">Founder: +967 716 621 214</a><span>Independent CSCA practice • Not affiliated with the examination organizer</span><a href="#/privacy" id="privacyLink">Privacy / الخصوصية</a><a href="https://csca.cn/" target="_blank" rel="noopener noreferrer">CSCA official portal ↗</a></footer>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="video_resources.js"></script>
+  <script src="arabic_content.js"></script>
+  <script src="i18n.js"></script>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
