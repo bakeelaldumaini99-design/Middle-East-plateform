@@ -1,6 +1,4 @@
-// إعدادات عامة للربط عبر Supabase. لا تضع المفتاح السري service_role هنا أبدًا.
-// استعمل Publishable Key / anon key فقط. نفذ supabase_setup.sql أولًا.
 window.MEEF_CONFIG = {
-  supabaseUrl: '',
-  supabaseAnonKey: ''
+  supabaseUrl: 'https://pzpybzjuheksnguysnwp.supabase.co',
+  supabaseAnonKey: 'sb_publishable_pbRB3Q1EnQWLq32LFZTCDQ_31Btqxk8'
 };
