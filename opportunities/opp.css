@@ -1,0 +1,299 @@
+/* ============================================================
+   منصة الشرق الأوسط التعليمية — هوية قسم الفرص والمنح
+   الألوان: برغندي / أزرق كحلي / بني ذهبي — خط العناوين: Aref Ruqaa
+   ============================================================ */
+:root {
+  --mep-wine:    #7a0d1e;
+  --mep-wine-2:  #a31226;
+  --mep-navy:    #16224e;
+  --mep-navy-2:  #2b3a8f;
+  --mep-brown:   #8a4a12;
+  --mep-gold:    #d97b1f;
+  --mep-ink:     #2a2430;
+  --mep-muted:   #6f6880;
+  --mep-line:    #e7e2ee;
+  --mep-bg:      #f6f4fa;
+  --mep-green:   #1e9e5a;
+  --mep-red:     #c92a2a;
+  --mep-amber:   #b87700;
+  --mep-grad-head: linear-gradient(120deg, var(--mep-navy) 0%, var(--mep-wine) 55%, var(--mep-wine-2) 100%);
+  --mep-grad-lang: linear-gradient(135deg, #d97b1f 0%, #8a3d05 100%);
+  --mep-grad-bach: linear-gradient(135deg, #2b3a8f 0%, #101b4a 100%);
+  --mep-grad-grad: linear-gradient(135deg, #a31226 0%, #52060f 100%);
+  --mep-grad-btn:  linear-gradient(90deg, var(--mep-wine) 0%, var(--mep-navy-2) 100%);
+  --mep-radius: 18px;
+  --mep-shadow: 0 10px 28px rgba(22, 20, 60, .10);
+}
+
+* , *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--mep-bg);
+  color: var(--mep-ink);
+  font-family: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 16px; line-height: 1.8;
+}
+h1, h2, h3, .mep-display { font-family: "Aref Ruqaa", "Tajawal", serif; line-height: 1.5; }
+a { color: var(--mep-navy-2); }
+img { max-width: 100%; }
+.mep-wrap { max-width: 1060px; margin-inline: auto; padding-inline: 16px; }
+
+/* ---------- الترويسة ---------- */
+.mep-topbar {
+  background: var(--mep-grad-head);
+  color: #fff;
+  padding: 14px 0;
+  position: relative; overflow: hidden;
+}
+.mep-topbar::after {
+  content: ""; position: absolute; inset-inline-end: -60px; top: -70px;
+  width: 260px; height: 260px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.16), transparent 70%);
+  pointer-events: none;
+}
+.mep-topbar .mep-wrap { display: flex; align-items: center; gap: 14px; }
+.mep-logo {
+  width: 62px; height: 62px; border-radius: 50%; flex: none;
+  border: 3px solid rgba(255,255,255,.85);
+  background: #fff; object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+.mep-brand { flex: 1; min-width: 0; }
+.mep-brand h1 { margin: 0; font-size: clamp(1.25rem, 4vw, 1.7rem); font-weight: 700; letter-spacing: .3px; }
+.mep-brand .en { display: block; font-family: "Tajawal", sans-serif; font-size: .78rem; opacity: .85; letter-spacing: .4px; }
+.mep-lang-btn {
+  flex: none; border: 1.5px solid rgba(255,255,255,.75); color: #fff;
+  background: rgba(255,255,255,.10); border-radius: 999px;
+  padding: 6px 16px; font: 700 .85rem "Tajawal", sans-serif; cursor: pointer;
+  transition: background .2s;
+}
+.mep-lang-btn:hover { background: rgba(255,255,255,.22); }
+
+/* ---------- شريط التنقل ---------- */
+.mep-nav {
+  background: #fff; border-bottom: 1px solid var(--mep-line);
+  position: sticky; top: 0; z-index: 40;
+}
+.mep-nav .mep-wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.mep-nav .mep-wrap::-webkit-scrollbar { display: none; }
+.mep-nav a {
+  white-space: nowrap; text-decoration: none; color: var(--mep-ink);
+  font-weight: 700; font-size: .92rem; padding: 12px 14px;
+  border-bottom: 3px solid transparent; transition: color .15s, border-color .15s;
+}
+.mep-nav a:hover { color: var(--mep-wine); }
+.mep-nav a.active { color: var(--mep-wine); border-bottom-color: var(--mep-wine); }
+
+/* ---------- شريط عنوان القسم ---------- */
+.mep-banner {
+  background: var(--mep-grad-head); color: #fff;
+  text-align: center; padding: 30px 16px 26px;
+}
+.mep-banner h2 { margin: 0 0 4px; font-size: clamp(1.4rem, 4.5vw, 2rem); }
+.mep-banner h2::after {
+  content: ""; display: block; width: 74px; height: 3px; margin: 10px auto 0;
+  background: rgba(255,255,255,.85); border-radius: 2px;
+}
+.mep-banner p { margin: 10px auto 0; max-width: 640px; opacity: .92; font-size: .95rem; }
+
+/* ---------- بطاقات الفئات الكبيرة ---------- */
+.mep-cats { display: grid; gap: 22px; margin: 30px 0; }
+@media (min-width: 760px) { .mep-cats { grid-template-columns: 1fr 1fr 1fr; } }
+.mep-cat {
+  border-radius: var(--mep-radius); color: #fff; padding: 30px 22px 22px;
+  min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; overflow: hidden; text-decoration: none;
+  box-shadow: var(--mep-shadow);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.mep-cat:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(22,20,60,.18); }
+.mep-cat .ico {
+  position: absolute; top: 18px; inset-inline-end: 20px;
+  width: 58px; height: 58px; border-radius: 50%;
+  border: 3px solid rgba(255,255,255,.85);
+  display: grid; place-items: center; font-size: 1.5rem;
+  background: rgba(255,255,255,.12);
+}
+.mep-cat h3 { margin: 0 0 4px; font-size: 1.35rem; }
+.mep-cat p { margin: 0 0 16px; font-size: .86rem; opacity: .92; }
+.mep-cat .go {
+  background: #fff; color: var(--mep-ink); border-radius: 999px;
+  text-align: center; font-weight: 700; font-size: .92rem; padding: 11px 14px;
+}
+.mep-cat.g-lang { background: var(--mep-grad-lang); }
+.mep-cat.g-bach { background: var(--mep-grad-bach); }
+.mep-cat.g-grad { background: var(--mep-grad-grad); }
+
+/* ---------- بطاقات الجامعات / الفرص ---------- */
+.mep-list { display: grid; gap: 20px; margin: 26px 0 40px; }
+.mep-card {
+  background: #fff; border: 1px solid var(--mep-line);
+  border-radius: var(--mep-radius); overflow: hidden; box-shadow: var(--mep-shadow);
+  transition: transform .2s ease;
+}
+.mep-card:hover { transform: translateY(-3px); }
+.mep-card-head {
+  background: var(--mep-grad-head); color: #fff; padding: 16px 20px;
+  display: flex; align-items: flex-start; gap: 12px; justify-content: space-between;
+}
+.mep-card-head h3 { margin: 0; font-size: 1.15rem; }
+.mep-card-head .en { display: block; font-family: "Tajawal", sans-serif; font-size: .76rem; opacity: .85; }
+.mep-badge {
+  flex: none; font: 700 .78rem "Tajawal", sans-serif;
+  border-radius: 999px; padding: 4px 13px; white-space: nowrap;
+}
+.mep-badge.open    { background: #e3f7ec; color: var(--mep-green); }
+.mep-badge.closed  { background: #fdeaea; color: var(--mep-red); }
+.mep-badge.pending { background: #fff4e0; color: var(--mep-amber); }
+.mep-card-body { padding: 16px 20px 20px; }
+.mep-rows { display: grid; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
+.mep-rows li { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.mep-rows .k { color: var(--mep-muted); font-size: .86rem; flex: none; }
+.mep-rows .v { font-weight: 700; text-align: end; }
+.mep-deadline {
+  display: flex; align-items: center; gap: 8px; justify-content: space-between;
+  flex-wrap: wrap; border-top: 1px dashed var(--mep-line); padding-top: 12px;
+  color: var(--mep-muted); font-size: .88rem;
+}
+.mep-deadline strong { color: var(--mep-wine); }
+.mep-count { font: 700 .8rem "Tajawal", sans-serif; border-radius: 999px; padding: 3px 12px; background: #eef1fb; color: var(--mep-navy-2); }
+.mep-count.soon { background: #fdeaea; color: var(--mep-red); animation: mepPulse 1.6s infinite; }
+@keyframes mepPulse { 50% { opacity: .55; } }
+.mep-btn {
+  display: inline-block; background: var(--mep-grad-btn); color: #fff !important;
+  border-radius: 12px; padding: 11px 26px; font-weight: 700; font-size: .92rem;
+  text-decoration: none; border: 0; cursor: pointer;
+  transition: filter .18s, transform .18s;
+}
+.mep-btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.mep-btn.ghost {
+  background: #fff; color: var(--mep-navy-2) !important;
+  border: 1.5px solid var(--mep-navy-2);
+}
+.mep-card-foot { display: flex; gap: 10px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+.mep-fav {
+  flex: none; width: 42px; height: 42px; border-radius: 12px; cursor: pointer;
+  border: 1.5px solid var(--mep-line); background: #fff; font-size: 1.1rem; color: #b9b2c6;
+  transition: all .15s;
+}
+.mep-fav.on { color: var(--mep-wine-2); border-color: var(--mep-wine-2); background: #fdf0f2; }
+.mep-src { font-size: .78rem; color: var(--mep-muted); }
+.mep-src a { color: var(--mep-muted); }
+
+/* ---------- أدوات: بحث وفلتر ---------- */
+.mep-tools { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0 4px; }
+.mep-tools input[type="search"], .mep-tools select {
+  font: 400 .92rem "Tajawal", sans-serif; color: var(--mep-ink);
+  border: 1.5px solid var(--mep-line); border-radius: 12px; padding: 10px 14px;
+  background: #fff; outline: none;
+}
+.mep-tools input[type="search"] { flex: 1; min-width: 180px; }
+.mep-tools input:focus, .mep-tools select:focus { border-color: var(--mep-navy-2); }
+
+/* ---------- مساعد اختيار المنحة ---------- */
+.mep-quiz {
+  background: #fff; border: 1px solid var(--mep-line); border-radius: var(--mep-radius);
+  box-shadow: var(--mep-shadow); padding: 24px 22px; margin: 26px 0;
+}
+.mep-quiz h3 { margin: 0 0 4px; color: var(--mep-wine); }
+.mep-quiz .q { margin: 16px 0 6px; font-weight: 700; }
+.mep-quiz .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.mep-chip {
+  border: 1.5px solid var(--mep-line); background: #fff; border-radius: 999px;
+  padding: 8px 18px; font: 700 .86rem "Tajawal", sans-serif; cursor: pointer;
+  transition: all .15s;
+}
+.mep-chip.on { background: var(--mep-grad-btn); color: #fff; border-color: transparent; }
+.mep-quiz-result { margin-top: 18px; }
+
+/* ---------- صفحات التفاصيل ---------- */
+.mep-hero-card {
+  background: var(--mep-grad-head); color: #fff;
+  border-radius: var(--mep-radius); padding: 30px 24px; margin: 26px 0 22px;
+  box-shadow: var(--mep-shadow);
+}
+.mep-hero-card h2 { margin: 0 0 6px; font-size: clamp(1.3rem, 4vw, 1.8rem); }
+.mep-hero-card .badge2 {
+  display: inline-block; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.4);
+  border-radius: 999px; padding: 4px 14px; font-size: .8rem; margin-bottom: 10px;
+}
+.mep-hero-card p { margin: 8px 0 0; opacity: .94; max-width: 780px; }
+.mep-section {
+  background: #fff; border: 1px solid var(--mep-line); border-radius: var(--mep-radius);
+  padding: 22px; margin-bottom: 18px; box-shadow: var(--mep-shadow);
+}
+.mep-section h3 { margin: 0 0 12px; color: var(--mep-wine); font-size: 1.2rem; }
+.mep-section ul, .mep-section ol { margin: 0; padding-inline-start: 22px; }
+.mep-section li { margin-bottom: 8px; }
+.mep-note {
+  background: #fff8ec; border: 1px solid #f0dcb4; border-radius: 12px;
+  padding: 12px 16px; font-size: .9rem; color: #7a5a17; margin-top: 12px;
+}
+.mep-verify {
+  display: inline-block; background: #fff4e0; color: var(--mep-amber);
+  border-radius: 999px; padding: 2px 12px; font: 700 .78rem "Tajawal", sans-serif;
+}
+
+/* ---------- قائمة تجهيز الملف ---------- */
+.mep-check { display: grid; gap: 8px; }
+.mep-check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  border: 1.5px solid var(--mep-line); border-radius: 12px; padding: 12px 14px;
+  cursor: pointer; transition: all .15s; background: #fff;
+}
+.mep-check-item:hover { border-color: var(--mep-navy-2); }
+.mep-check-item.done { background: #f2fbf6; border-color: #bfe6cf; }
+.mep-check-item.done .t { text-decoration: line-through; color: var(--mep-muted); }
+.mep-check-item input { margin-top: 6px; width: 18px; height: 18px; accent-color: var(--mep-green); flex: none; }
+.mep-check-item .t { flex: 1; }
+.mep-req-tag { flex: none; font: 700 .72rem "Tajawal", sans-serif; border-radius: 999px; padding: 3px 10px; margin-top: 2px; }
+.mep-req-tag.required    { background: #fdeaea; color: var(--mep-red); }
+.mep-req-tag.optional    { background: #eef1fb; color: var(--mep-navy-2); }
+.mep-req-tag.translation { background: #fff4e0; color: var(--mep-amber); }
+.mep-progress {
+  height: 10px; border-radius: 999px; background: #eeeaf4; overflow: hidden; margin: 10px 0 4px;
+}
+.mep-progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--mep-gold), var(--mep-green)); width: 0; transition: width .3s; }
+.mep-progress-label { font-size: .82rem; color: var(--mep-muted); }
+
+/* ---------- حالة فارغة ---------- */
+.mep-empty {
+  text-align: center; background: #fff; border: 1.5px dashed var(--mep-line);
+  border-radius: var(--mep-radius); padding: 44px 22px; color: var(--mep-muted);
+}
+.mep-empty .big { font-size: 2.4rem; }
+
+/* ---------- زر واتساب العائم ---------- */
+.mep-wa {
+  position: fixed; bottom: 22px; inset-inline-start: 20px; z-index: 60;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25d366; display: grid; place-items: center;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, .45);
+  transition: transform .18s;
+}
+.mep-wa:hover { transform: scale(1.08); }
+.mep-wa svg { width: 30px; height: 30px; fill: #fff; }
+
+/* ---------- التذييل ---------- */
+.mep-footer {
+  background: var(--mep-grad-head); color: #fff; margin-top: 50px; padding: 34px 0 22px;
+}
+.mep-footer h3 { margin: 0 0 14px; font-size: 1.15rem; }
+.mep-social { display: flex; gap: 12px; flex-wrap: wrap; }
+.mep-social a {
+  display: inline-flex; align-items: center; gap: 8px; color: #fff; text-decoration: none;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px; padding: 8px 18px; font-size: .88rem; font-weight: 700;
+  transition: background .18s;
+}
+.mep-social a:hover { background: rgba(255,255,255,.24); }
+.mep-footer .copy { margin-top: 22px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.22); font-size: .8rem; opacity: .8; text-align: center; }
+
+/* ---------- حركات الظهور ---------- */
+.mep-fade { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.mep-fade.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mep-fade { opacity: 1; transform: none; transition: none; }
+  .mep-count.soon { animation: none; }
+}
